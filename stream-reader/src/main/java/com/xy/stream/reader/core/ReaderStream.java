@@ -52,20 +52,7 @@ public class ReaderStream<ParentMatch extends ReaderMatch> {
 
 
     public ReaderStream<ParentMatch> use(PushbackReader reader){
-        Field field = null;
-        try {
-            field = reader.getClass().getDeclaredField("buf");
-            field.setAccessible(true);
-            char[] chars = (char[]) field.get(reader);
-            if(chars.length < 1){
-                this.reader = new PushbackReader(reader, this.bufSize);
-                return this;
-            }
-            this.bufSize = chars.length;
-            this.reader = reader;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        this.reader = new PushbackReader(reader, this.bufSize);
         return this;
     }
 
