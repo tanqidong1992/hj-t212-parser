@@ -103,4 +103,38 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <profiles>
+        <profile>
+            <id>vanillazi</id>
+            <properties>
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>vanillazi</id>
+                    <url>https://repo.wanazi.cn/repository/maven-snapshots/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>vanillazi</id>
+                    <url>https://repo.wanazi.cn/repository/maven-releases/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>hngd</id>
+            <properties>
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
+            <distributionManagement>
+                <repository>
+                    <id>hnlocal</id>
+                    <url>https://repo.5618cn.com/repository/maven-releases/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>hnlocal</id>
+                    <url>https://repo.5618cn.com/repository/maven-snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>
