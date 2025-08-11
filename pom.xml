@@ -13,4 +13,23 @@
 		<module>stream-reader</module>
 		<module>translator</module>
 	</modules>
+
+	<profiles>
+		<profile>
+			<id>hngd</id>
+			<properties>
+				<maven.test.skip>true</maven.test.skip>
+			</properties>
+			<distributionManagement>
+				<repository>
+					<id>hnlocal</id>
+					<url>https://repo.5618cn.com/repository/maven-releases/</url>
+				</repository>
+				<snapshotRepository>
+					<id>hnlocal</id>
+					<url>https://repo.5618cn.com/repository/maven-snapshots/</url>
+				</snapshotRepository>
+			</distributionManagement>
+		</profile>
+	</profiles>
 </project>
